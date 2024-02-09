@@ -9,4 +9,11 @@ jobs:
         steps:
             - name: Setting an error message
               run: echo "::error::Missing semicolon"
-
+            - name: Setting an error message with parameters
+              run: echo "::error tittle=Error title, file=app.js, line=2, endLine=3, col=5, endColumn=7::Missing semicolon"
+            - name: Setting a debug message with parameters
+              run: echo "::debug tittle=Debug title, file=app.js, line=2, endLine=3, col=5, endColumn=7::Missing semicolon"
+            - name: Setting a warning message with parameters
+              run: echo "::warning tittle=Warning title, file=app.js, line=2, endLine=3, col=5, endColumn=7::Missing semicolon"
+            - name: Setting a notice message with parameters
+              run: echo "::notice tittle=Notice title, file=app.js, line=2, endLine=3, col=5, endColumn=7::Missing semicolon"

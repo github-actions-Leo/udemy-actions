@@ -2,6 +2,8 @@ name: Events
 on:
     push:
         branches: [master]
+    pull_request:
+        branches: [master, feature/*]
 jobs:
     checkout-test:
         runs-on: ubuntu-latest
@@ -11,4 +13,3 @@ jobs:
                 echo $GITHUB_SHA
                 echo $GITHUB_REF
             - uses: actions/checkout@v4
-            

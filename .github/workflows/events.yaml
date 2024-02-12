@@ -1,0 +1,14 @@
+name: Events
+on:
+    push:
+        branches: [master]
+jobs:
+    checkout-test:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Step
+              run: |
+                echo $GITHUB_SHA
+                echo $GITHUB_REF
+            - uses: actions/checkout@v4
+            

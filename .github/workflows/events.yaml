@@ -4,6 +4,9 @@ on:
         branches: [master]
     pull_request:
         branches: [master, feature/*]
+        types: [opened, assigned]
+    issues:
+        types: [opened]
 jobs:
     checkout-test:
         runs-on: ubuntu-latest

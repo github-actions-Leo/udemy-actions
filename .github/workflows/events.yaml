@@ -1,7 +1,18 @@
 name: Events
 on:
     push:
-        branches: [master]
+        branches: 
+            - "feature/*"
+            - master
+            - "feature/**"
+            - "!feature/featA"  #exclude this branch
+        #branches-ignore:
+        #    - develop
+        #tags:
+        #    - v1.*
+        #    - "!v1.1"
+        #paths:
+        #    - "*.js"
     pull_request:
         branches: [master, feature/*]
         types: [opened, assigned]

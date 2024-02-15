@@ -5,6 +5,8 @@ jobs:
     job-1:
         runs-on: ubuntu-latest
         steps:
+            #- name: Fail
+            #  run: exit 1      ##este es por si queremos que falle y pase al job 2
             - name: Step 1
               run: sleep 20
             - name: Runs on failure

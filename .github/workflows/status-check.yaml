@@ -7,8 +7,9 @@ jobs:
         steps:
             - name: Step 1
               run: sleep 20
-            - name: Fail
-              id: step-fail
+            - name: Step 2
+              id: step-2
+              continue-on-error: true
               run: exit 1      ##este es por si queremos que falle y pase al job 2
             - name: Runs on step 2 failure
               if: failure() && steps.step-fail.conclusion == 'failure'

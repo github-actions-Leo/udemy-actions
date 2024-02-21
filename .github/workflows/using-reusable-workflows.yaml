@@ -1,0 +1,16 @@
+name: Calling reusable WF
+on:
+    workflow_dispatch:
+        inputs:
+            name: 
+                description: 'Input description'
+                type: string
+                default: 'Leo'
+                required: false
+jobs:
+    calling-a-reusable-wf:
+        uses: github-actions-Leo/udemy-actions/.github/workflows/reusable.yaml@master
+        with:
+            name: ${{ inputs.name }}
+        secrets: 
+            acess_token: ${{ secrets.ACCESS_TOKEN }}

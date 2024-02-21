@@ -9,13 +9,13 @@ on:
                 required: false
 jobs:
     calling-a-reusable-wf:
-        uses: github-actions-Leo/udemy-actions/.github/workflows/reusable.yaml@master
+        uses: github-actions-Leo/udemy-actions/.github/workflows/reusable.yaml
         with:
             name: ${{ inputs.name }}
         secrets: 
             acess_token: ${{ secrets.ACCESS_TOKEN }}
     calling-a-reusable-wf-in-the-same-repository:
-        uses: github-actions-Leo/udemy-actions/.github/workflows/resusable-workflow.yaml
+        uses: ./.github/workflows/reusable-workflow.yaml
     using-reusable-wf-output:
         needs: calling-a-reusable-wf-in-the-same-repository
         runs-on: ubuntu-latest

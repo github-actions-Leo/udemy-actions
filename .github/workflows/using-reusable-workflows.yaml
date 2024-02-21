@@ -15,7 +15,7 @@ jobs:
         secrets: 
             acess_token: ${{ secrets.ACCESS_TOKEN }}
     calling-a-reusable-wf-in-the-same-repository:
-        uses: ./.github/workflows/resusable-workflow.yaml
+        uses: github-actions-Leo/udemy-actions/.github/workflows/resusable-workflow.yaml
     using-reusable-wf-output:
         needs: calling-a-reusable-wf-in-the-same-repository
         runs-on: ubuntu-latest
